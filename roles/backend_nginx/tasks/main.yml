@@ -1,0 +1,10 @@
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+- name: Create index.html with Magic Variable name
+  ansible.builtin.copy:
+    content: "Hello from {{ inventory_hostname }}!\n"
+    dest: /var/www/html/index.html
+    mode: '0644'

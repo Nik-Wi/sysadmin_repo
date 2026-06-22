@@ -1,0 +1,17 @@
+- name: Phase 1 - Base setup for all hosts
+  hosts: all
+  become: yes
+  roles:
+    - base_setup
+
+- name: Phase 2 - Configure Backend web servers
+  hosts: backend_servers
+  become: yes
+  roles:
+    - backend_nginx
+
+- name: Phase 3 - Configure Proxy server
+  hosts: proxy_servers
+  become: yes
+  roles:
+    - proxy_nginx

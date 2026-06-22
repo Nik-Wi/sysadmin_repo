@@ -1,0 +1,12 @@
+all:
+  children:
+    proxy_servers:
+      hosts:
+        node-1:
+          ansible_host: 111.88.159.159
+    backend_servers:
+      hosts:
+        node-2:
+          ansible_host: 130.193.52.79
+        node-3:
+          ansible_host: 130.193.52.165
